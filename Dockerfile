@@ -1,7 +1,7 @@
 FROM golang:1.14-alpine3.11 AS build
 
-COPY . /go/src/github.com/andreimarcu/linx-server
-WORKDIR /go/src/github.com/andreimarcu/linx-server
+COPY . /go/src/github.com/gryffyn/linx-server
+WORKDIR /go/src/github.com/gryffyn/linx-server
 
 RUN set -ex \
         && apk add --no-cache --virtual .build-deps git \
@@ -15,8 +15,8 @@ COPY --from=build /go/bin/linx-server /usr/local/bin/linx-server
 ENV GOPATH /go
 ENV SSL_CERT_FILE /etc/ssl/cert.pem
 
-COPY static /go/src/github.com/andreimarcu/linx-server/static/
-COPY templates /go/src/github.com/andreimarcu/linx-server/templates/
+COPY static /go/src/github.com/gryffyn/linx-server/static/
+COPY templates /go/src/github.com/gryffyn/linx-server/templates/
 
 RUN mkdir -p /data/files && mkdir -p /data/meta && chown -R 65534:65534 /data
 

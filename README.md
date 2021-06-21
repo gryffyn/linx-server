@@ -1,10 +1,7 @@
 linx-server 
 ======
 
-Self-hosted file/media sharing website.  
-
-### Demo
-You can see what it looks like using the demo: [https://put.icu/](https://put.icu/)
+Self-hosted file/media sharing website.
 
 
 ### Clients
@@ -34,39 +31,9 @@ You can see what it looks like using the demo: [https://put.icu/](https://put.ic
 Getting started
 -------------------
 
-#### Using Docker
-1. Create directories ```files``` and ```meta``` and run ```chown -R 65534:65534 meta && chown -R 65534:65534 files``` 
-2. Create a config file (example provided in repo), we'll refer to it as __linx-server.conf__ in the following examples
-
-
-
-Example running
-```
-docker run -p 8080:8080 -v /path/to/linx-server.conf:/data/linx-server.conf -v /path/to/meta:/data/meta -v /path/to/files:/data/files andreimarcu/linx-server -config /data/linx-server.conf
-``` 
-
-Example with docker-compose 
-```
-version: '2.2'
-services:
-  linx-server:
-    container_name: linx-server
-    image: andreimarcu/linx-server
-    command: -config /data/linx-server.conf
-    volumes:
-      - /path/to/files:/data/files
-      - /path/to/meta:/data/meta
-      - /path/to/linx-server.conf:/data/linx-server.conf
-    network_mode: bridge
-    ports:
-      - "8080:8080"
-    restart: unless-stopped
-```
-Ideally, you would use a reverse proxy such as nginx or caddy to handle TLS certificates.
-
 #### Using a binary release
 
-1. Grab the latest binary from the [releases](https://github.com/andreimarcu/linx-server/releases), then run ```go install```
+1. Grab the latest binary from the [releases](https://github.com/gryffyn/linx-server/releases), then run ```go install```
 2. Run ```linx-server -config path/to/linx-server.conf```
 
   
@@ -187,19 +154,10 @@ Run linx-server with the ```certfile = path/to/cert.file``` and ```keyfile = pat
 #### 3. Using the built-in http server
 Run linx-server normally.
 
-Development
------------
-Any help is welcome, PRs will be reviewed and merged accordingly.  
-The official IRC channel is #linx on irc.oftc.net  
-
-1. ```go get -u github.com/andreimarcu/linx-server ```
-2. ```cd $GOPATH/src/github.com/andreimarcu/linx-server ```
-3. ```go build && ./linx-server```
-
-
 License
 -------
-Copyright (C) 2015 Andrei Marcu
+Copyright (C) 2015 Andrei Marcu  
+Copyright (C) 2021 gryffyn
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -217,3 +175,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Author
 -------
 Andrei Marcu, https://andreim.net/
+

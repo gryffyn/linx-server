@@ -3,8 +3,8 @@ package main
 import (
 	"time"
 
-	"github.com/andreimarcu/linx-server/expiry"
 	"github.com/dustin/go-humanize"
+	"github.com/gryffyn/linx-server/expiry"
 )
 
 var defaultExpiryList = []uint64{

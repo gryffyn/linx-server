@@ -9,8 +9,8 @@ import (
 	"path"
 	"time"
 
-	"github.com/andreimarcu/linx-server/backends"
-	"github.com/andreimarcu/linx-server/helpers"
+	"github.com/gryffyn/linx-server/backends"
+	"github.com/gryffyn/linx-server/helpers"
 )
 
 type LocalfsBackend struct {
@@ -111,7 +111,6 @@ func (b LocalfsBackend) writeMetadata(key string, metadata backends.Metadata) er
 		Size:         metadata.Size,
 		SrcIp:        metadata.SrcIp,
 		MaxDLs:       metadata.MaxDLs,
-		
 	}
 
 	dst, err := os.Create(metaPath)

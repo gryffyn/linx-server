@@ -8,13 +8,13 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/andreimarcu/linx-server/backends"
-	"github.com/andreimarcu/linx-server/helpers"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/awserr"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/aws/aws-sdk-go/service/s3/s3manager"
+	"github.com/gryffyn/linx-server/backends"
+	"github.com/gryffyn/linx-server/helpers"
 )
 
 type S3Backend struct {
@@ -149,10 +149,10 @@ func unmapMetadata(input map[string]*string) (m backends.Metadata, err error) {
 
 	m.Mimetype = aws.StringValue(input["Mimetype"])
 	m.Sha256sum = aws.StringValue(input["Sha256sum"])
-	m.MaxDLs,err = strconv.ParseInt(aws.StringValue(input["MaxDLs"]), 10, 64)
-        if err != nil {
-                return
-        }
+	m.MaxDLs, err = strconv.ParseInt(aws.StringValue(input["MaxDLs"]), 10, 64)
+	if err != nil {
+		return
+	}
 
 	if key, ok := input["AccessKey"]; ok {
 		m.AccessKey = aws.StringValue(key)

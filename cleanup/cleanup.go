@@ -4,8 +4,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/andreimarcu/linx-server/backends/localfs"
-	"github.com/andreimarcu/linx-server/expiry"
+	"github.com/gryffyn/linx-server/backends/localfs"
+	"github.com/gryffyn/linx-server/expiry"
 )
 
 func Cleanup(filesDir string, metaDir string, noLogs bool) {

@@ -38,3 +38,5 @@ binaries/
 custom_pages/
 authfile
 build_git.sh
+/_build/
+/build_amd64.sh

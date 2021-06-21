@@ -15,11 +15,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/andreimarcu/linx-server/auth/apikeys"
-	"github.com/andreimarcu/linx-server/backends"
-	"github.com/andreimarcu/linx-server/expiry"
 	"github.com/dchest/uniuri"
 	"github.com/gabriel-vasile/mimetype"
+	"github.com/gryffyn/linx-server/auth/apikeys"
+	"github.com/gryffyn/linx-server/backends"
+	"github.com/gryffyn/linx-server/expiry"
 	"github.com/zenazn/goji/web"
 )
 

@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/andreimarcu/linx-server/backends"
-	"github.com/andreimarcu/linx-server/expiry"
 	"github.com/dustin/go-humanize"
 	"github.com/flosch/pongo2"
+	"github.com/gryffyn/linx-server/backends"
+	"github.com/gryffyn/linx-server/expiry"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/russross/blackfriday"
 	"github.com/zenazn/goji/web"

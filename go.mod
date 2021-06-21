@@ -1,9 +1,9 @@
-module github.com/andreimarcu/linx-server
+module github.com/gryffyn/linx-server
 
 go 1.14
 
 require (
-	github.com/GeertJohan/go.rice v1.0.0
+	github.com/GeertJohan/go.rice v1.0.2
 	github.com/aws/aws-sdk-go v1.29.19
 	github.com/boombuler/barcode v1.0.1
 	github.com/dchest/uniuri v0.0.0-20200228104902-7aecb25e1fe5
@@ -13,7 +13,7 @@ require (
 	github.com/microcosm-cc/bluemonday v1.0.2
 	github.com/minio/sha256-simd v0.1.1
 	github.com/russross/blackfriday v1.5.1
-	github.com/tomasen/realip v0.0.0-20180522021738-f0c99a92ddce // indirect
+	github.com/tomasen/realip v0.0.0-20180522021738-f0c99a92ddce
 	github.com/vharitonsky/iniflags v0.0.0-20180513140207-a33cd0b5f3de
 	github.com/zeebo/bencode v1.0.0
 	github.com/zenazn/goji v0.9.0

@@ -30,7 +30,7 @@
             </div>
             <div id="maxdls">
                 <label>Download limit:
-                    <select name="maxdls" id="maxdls">
+                    <select name="maxdlssel" id="maxdlssel">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="5">5</option>
@@ -43,15 +43,13 @@
                     </select>
                 </label>
             </div>
-            <span class="hint--top hint--bounce"
-                data-hint="Replace the filename with random characters. The file extension is retained">
+            <span>
                 <label><input {% if forcerandom %} disabled {% endif %} name="randomize" id="randomize" type="checkbox"
                         {% if (default_randomize && !( forcerandom)) || forcerandom %} checked {% endif %} /> Randomize filename</label>
             </span>
 			{% if disable_access_key != true %}
             <div id="access_key">
-                <span class="hint--top hint--bounce"
-                    data-hint="Require password to access (this does not encrypt the file but only limits access)">
+                <span>
                     <label>
                         <input type="checkbox" id="access_key_checkbox" />
                         <span id="access_key_text">Require access password</span>

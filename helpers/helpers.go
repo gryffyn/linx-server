@@ -6,25 +6,25 @@ import (
 	"io"
 	"unicode"
 
-	"github.com/andreimarcu/linx-server/backends"
 	"github.com/gabriel-vasile/mimetype"
+	"github.com/gryffyn/linx-server/backends"
 	"github.com/minio/sha256-simd"
 )
 
 // EncryptDecrypt runs a XOR encryption on the input string, encrypting it if it hasn't already been,
 // and decrypting it if it has, using the key provided.
 func EncryptDecrypt(input, key string) (output string) {
-        for i := 0; i < len(input); i++ {
-                output += string(input[i] ^ key[i % len(key)])
-        }
+	for i := 0; i < len(input); i++ {
+		output += string(input[i] ^ key[i%len(key)])
+	}
 
-        return output
+	return output
 }
 
 func GenerateHash(s string) string {
-        h := sha256.New()
-        h.Write([]byte(s))
-        return hex.EncodeToString(h.Sum(nil))
+	h := sha256.New()
+	h.Write([]byte(s))
+	return hex.EncodeToString(h.Sum(nil))
 }
 
 func GenerateMetadata(r io.Reader) (m backends.Metadata, err error) {

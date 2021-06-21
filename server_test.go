@@ -451,7 +451,7 @@ func TestPostJSONUploadMaxExpiry(t *testing.T) {
 	Config.maxExpiry = 300
 
 	// include 0 to test edge case
-	// https://github.com/andreimarcu/linx-server/issues/111
+	// https://github.com/gryffyn/linx-server/issues/111
 	testExpiries := []string{"86400", "-150", "0"}
 	for _, expiry := range testExpiries {
 		w := httptest.NewRecorder()

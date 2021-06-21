@@ -8,12 +8,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/andreimarcu/linx-server/backends"
-	"github.com/andreimarcu/linx-server/expiry"
-	"github.com/andreimarcu/linx-server/httputil"
-	"github.com/andreimarcu/linx-server/helpers"
+	"github.com/gryffyn/linx-server/backends"
+	"github.com/gryffyn/linx-server/expiry"
+	"github.com/gryffyn/linx-server/helpers"
+	"github.com/gryffyn/linx-server/httputil"
+	"github.com/tomasen/realip"
 	"github.com/zenazn/goji/web"
-        "github.com/tomasen/realip"
 )
 
 func fileServeHandler(c web.C, w http.ResponseWriter, r *http.Request) {
@@ -135,7 +135,7 @@ func setDownloadLimit(filename string) (metadata backends.Metadata, err error) {
 }
 
 func checkCookie(filehash string, w http.ResponseWriter, r *http.Request) bool {
-        value :=  helpers.GenerateHash(helpers.EncryptDecrypt(filehash,realip.FromRequest(r)))
+	value := helpers.GenerateHash(helpers.EncryptDecrypt(filehash, realip.FromRequest(r)))
 	cookie, err := r.Cookie("filehash")
 	if err == nil && cookie.Value == value {
 		return true
@@ -144,7 +144,7 @@ func checkCookie(filehash string, w http.ResponseWriter, r *http.Request) bool {
 }
 
 func setCookie(filehash string, w http.ResponseWriter, r *http.Request) bool {
-        value :=  helpers.GenerateHash(helpers.EncryptDecrypt(filehash,realip.FromRequest(r)))
+	value := helpers.GenerateHash(helpers.EncryptDecrypt(filehash, realip.FromRequest(r)))
 	expire := time.Now().Add(time.Minute * 30)
 	cookie := http.Cookie{
 		Name:    "filehash",
@@ -154,4 +154,3 @@ func setCookie(filehash string, w http.ResponseWriter, r *http.Request) bool {
 	http.SetCookie(w, &cookie)
 	return true
 }
-
