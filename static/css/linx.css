@@ -38,14 +38,8 @@ body {
 }
 
 #main {
-  background-color: white; 
-
-  padding: 6px 5px 8px 5px; 
-
-  -moz-box-shadow:    1px 1px 1px 1px #ccc;
-  -webkit-box-shadow: 1px 1px 1px 1px #ccc;
-  box-shadow:         1px 1px 1px 1px #ccc;
-
+  background-color: #1d1e20;
+  padding: 6px 5px 8px 5px;
   text-align: center;
 }
 
@@ -70,7 +64,7 @@ body {
 }
 
 #info {
-  background-color: white;
+  background-color: #1d1e20;
   padding: 5px;
 }
 
@@ -130,9 +124,13 @@ body {
   border-bottom: 1px dotted gray;
 }
 
+#main a:hover {
+  color: #1d1e20;
+}
+
 .normal a:hover {
-  color: black;
-  background-color: #E8ECF0;
+  color: #1d1e20;
+  background-color: #f5a9c9;
 }
 
 .normal ul {
@@ -235,7 +233,7 @@ body {
 }
 
 #upload_btn {
-  background-color: white; 
+  background-color: #1d1e20; 
   border: 2px solid #C9C9C9; 
   width: 90px; 
   height: 30px;
@@ -312,23 +310,31 @@ body {
 .editor {
   width: 100%;
   height: 450px;
-  border: 1px solid #eaeaea;
-  font-family: monospace;
+  border: 1px solid #dadadb;
+  font-family: "Source Code Pro", "Cascadia Code", Menlo, Consolas, monospace;
   resize: none;
   overflow: auto;
   border-radius: 2px;
-  padding: 2px;
+  padding: 4px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  background: #1d1e20;
+  color: #fff;
  }
 
 
-#info input[type=text] {
-  border: 1px solid #eaeaea;
-  color: #556A7F;
-  padding: 2px 4px;
+#info input[type="text"] {
+  border: 1px solid #dadadb;
+  color: #dadadb;
+  /* padding: 2px 4px; */
   font-family: Arial, Helvetica, sans-serif;
+  background: #1d1e20;
+  border-radius: 4px;
+}
+
+#filename-line {
+  margin-bottom: 3px;
 }
 
 .storygreen {

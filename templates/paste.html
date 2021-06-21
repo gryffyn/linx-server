@@ -6,9 +6,9 @@
 <form id="reply" action='{{ sitepath }}upload' method='post'>
     <div id="main" class="paste">
         <div id="info" class="info-flex">
-            <div>
+            <div id="filename-line">
                 {% if not forcerandom %}<span><input class="codebox" name='filename' id="filename"
-                        type='text' value="" placeholder="filename" /></span>{% endif %}.<span><input
+                        type='text' value="" placeholder="filename" /></span>{% endif %} . <span><input
                         id="extension" class="codebox" name='extension' type='text' value="" placeholder="txt" /></span>
             </div>
             <div>
@@ -17,7 +17,7 @@
                     <input class="codebox" name="access_key" type="text" placeholder="password" />
                 </span>
 				{% endif %}
-                <select id="expiry" name="expires">
+                <select id="expires" name="expires">
                     <span>
                     <option disabled>Expires:</option>
                     {% for expiry in expirylist %}
